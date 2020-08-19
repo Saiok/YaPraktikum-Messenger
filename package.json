@@ -1,0 +1,23 @@
+{
+  "name": "mf.messenger.praktikum.yandex",
+  "version": "1.0.0",
+  "description": "Yandex Praktikum. Project of first sprint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saiok/mf.messenger.praktikum.yandex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saiok/mf.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/Saiok/mf.messenger.praktikum.yandex#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
