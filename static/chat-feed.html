@@ -18,20 +18,20 @@
 </head>
 <body>
 <main class="w-100">
-    <div id="chat" class="h-100 w-100 d-flex row">
+    <div class="h-100 w-100 d-flex row chat">
         <div class="aside-panel h-100 border p-8">
             <div class="aside-header d-flex column a-center j-center border-bottom pb-12">
                 <div class="w-100 text-right mt-16 mb-16">
                     <span class="text-link text-gray">Профиль ></span>
                 </div>
-                <div id="input-wrapper" class="w-100">
-                    <input id="search-input" class="mb-8 pt-8 pb-8 w-100 pl-20" type="text" name="search"
+                <div class="w-100 input-wrapper">
+                    <input class="mb-8 pt-8 pb-8 w-100 pl-20 search-input" type="text" name="search"
                            placeholder="Поиск">
-                    <img id="search-icon" src="../assets/icons/search.svg" alt="search icon">
+                    <img class="search-icon" src="../assets/icons/search.svg" alt="search icon">
                 </div>
             </div>
-            <div class="aside-body d-flex column a-center j-center">
-                <div class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
+            <ul class="aside-body d-flex column a-center j-center p-0">
+                <li class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
                     <div class="avatar"></div>
                     <div class="chat-info pl-8 d-flex column">
                         <span class="text-bold mb-4">User 1</span>
@@ -43,8 +43,8 @@
                     <div class="badge-accent">
                         <span>2</span>
                     </div>
-                </div>
-                <div class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
+                </li>
+                <li class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
                     <div class="avatar"></div>
                     <div class="chat-info pl-8 d-flex column">
                         <span class="text-bold mb-4">User 2</span>
@@ -56,8 +56,8 @@
                     <div class="badge-accent">
                         <span>5</span>
                     </div>
-                </div>
-                <div class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
+                </li>
+                <li class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
                     <div class="avatar"></div>
                     <div class="chat-info pl-8 d-flex column">
                         <span class="text-bold mb-4">User 3</span>
@@ -68,8 +68,8 @@
                     <div class="time">
                         <span class="text-secondary">11:00</span>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
         <div class="message-field p-8 border-bottom border-right border-top">
             <div class="message-empty w-100 h-100 text-center d-flex column j-start">

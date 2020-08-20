@@ -14,10 +14,10 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-#input-wrapper {
+.input-wrapper {
     position:relative;
 }
-#search-icon {
+.search-icon {
     position: absolute;
     bottom: 22px;
     left: 5px;
