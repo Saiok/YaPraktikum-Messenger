@@ -12,23 +12,23 @@ body {font-family: 'Roboto Thin', 'Roboto Light', sans-serif}
 .h-25 {height: 25%}
 
 /*Display settings*/
-.d-flex {display: flex}
+.display-flex {display: flex}
 
 /*Flex direction settings*/
-.row {flex-direction: row}
-.column {flex-direction: column}
+.flex-direction-row {flex-direction: row}
+.flex-direction-column {flex-direction: column}
 
 /*Justify content settings*/
-.s-between {justify-content: space-between}
-.s-around {justify-content: space-around}
-.j-start {justify-content: start}
-.j-center {justify-content: center}
-.j-end {justify-content: end}
+.justify-content-between {justify-content: space-between}
+.justify-content-around {justify-content: space-around}
+.justify-content-start {justify-content: start}
+.justify-content-center {justify-content: center}
+.justify-content-end {justify-content: end}
 
 /*Align items settings*/
-.a-center {align-items: center}
-.a-start {align-items: start}
-.a-end {align-items: end}
+.align-items-center {align-items: center}
+.align-items-start {align-items: start}
+.align-items-end {align-items: end}
 
 /*Background colors*/
 .bg-accent {background-color: #039BE5}
