@@ -50,8 +50,16 @@ body {font-family: 'Roboto Thin', 'Roboto Light', sans-serif}
 .text-primary {color: #039BE5}
 .text-white {color: #fff}
 .text-black {color: #000}
+.text-gray {color: gray}
+/*Align*/
+.text-right {text-align: right}
+.text-center {text-align: center}
+.text-left {text-align: left}
 /*Others*/
-.text-link {cursor: pointer; color: #039BE5}
+.text-bold {font-weight: bold}
+.text-secondary {color: #999; font-size: 12px}
+.text-link {cursor: pointer}
+.text-link-underlined {cursor: pointer; text-decoration: underline}
 
 /*Paddings*/
 .p-4 {padding: 4px}
@@ -133,4 +141,15 @@ body {font-family: 'Roboto Thin', 'Roboto Light', sans-serif}
 .btn-accent:hover {
     background-color: #fff;
     color: #039BE5;
+}
+
+/*Badge*/
+.badge-accent {
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #039BE5;
+    font-size: 12px;
+    text-align: center;
 }
