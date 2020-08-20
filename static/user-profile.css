@@ -1,6 +1,6 @@
 @import "styles.css";
 
-#root {height: 90vh}
+main {height: 90vh}
 #user-profile {position: relative}
 
 .avatar {
