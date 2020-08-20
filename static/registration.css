@@ -1,0 +1,33 @@
+@import "styles.css";
+
+#root {
+    height: 90vh;
+}
+
+.form-wrapper {
+    width: 400px;
+    border-radius: 5px;
+}
+
+.title-wrapper {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.inputs-wrapper {}
+
+.inputs-wrapper > input {
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.icon {
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+}
