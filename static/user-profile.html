@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>User profile * Messenger App</title>
+    <link rel="stylesheet" href="user-profile.css">
 </head>
 <body>
-$END$
+    <div id="root">
+        <div id="user-profile" class="w-100 h-100 d-flex column a-center j-center">
+            <div class="short-info w-50 d-flex column a-center">
+                <div class="avatar mb-16"></div>
+                <span class="full-name text-bold">User Full Name</span>
+            </div>
+            <div class="general-info w-50">
+                <div class="general-info-inner d-flex row a-center s-between pt-16 pb-12 border-bottom">
+                    <span class="text-bold">Почта</span>
+                    <span class="text-secondary">user@mail.ru</span>
+                </div>
+                <div class="general-info-inner d-flex row a-center s-between pt-16 pb-12">
+                    <span class="text-bold">Логин</span>
+                    <span class="text-secondary">Username</span>
+                </div>
+
+                <div class="actions d-flex column">
+                    <span class="text-primary text-link border-bottom pt-16 pb-12">Изменить данные</span>
+                    <span class="text-danger text-link pt-16 pb-12">Выход</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -48,6 +48,7 @@ body {font-family: 'Roboto Thin', 'Roboto Light', sans-serif}
 .sub-title {font-size: 16px}
 /*Colors*/
 .text-primary {color: #039BE5}
+.text-danger {color: #DF4857}
 .text-white {color: #fff}
 .text-black {color: #000}
 .text-gray {color: gray}
