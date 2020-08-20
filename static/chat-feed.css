@@ -1,0 +1,125 @@
+@import "styles.css";
+
+#root {height: 90vh}
+
+.aside-panel {width: 30%; background: #FBFBFB; box-sizing: border-box}
+.message-field {width: 70%}
+
+input {
+    font-size: 16px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    background-color: #EFEFEF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#input-wrapper {
+    position:relative;
+}
+#search-icon {
+    position: absolute;
+    bottom: 22px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    opacity: 0.6;
+}
+
+.user-info {position: relative; cursor: pointer}
+.avatar {
+    border-radius: 100%;
+    background-color: #efefef;
+    width: 48px;
+    height: 48px;
+}
+
+.chat-info {font-size: 14px}
+.user-info:hover {background-color: #E4EDFD}
+.message-preview {font-size: 12px}
+.badge-accent {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+.time {
+    position: absolute;
+    right: 12px;
+    font-size: 12px;
+}
+
+.user-info-feed {position: relative}
+.user-info-feed > .avatar {
+    border-radius: 100%;
+    background-color: #efefef;
+    width: 40px;
+    height: 40px;
+}
+.settings-icon {
+    position: absolute;
+    right: 5px;
+    top: 16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.settings-icon:hover {
+    background-color: #ccc;
+}
+
+.j-end {
+    justify-content: flex-end;
+}
+.message-text-1 {
+    font-size: 14px;
+    width: fit-content;
+    max-width: 400px;
+    background-color: #F8F8F8;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: relative;
+}
+.message-text-2 {
+    font-size: 14px;
+    width: fit-content;
+    max-width: 400px;
+    background-color: #E4EDFD;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: relative;
+}
+.message-time {
+    position: absolute;
+    font-size: 8px;
+    right: 6px;
+    bottom: 5px;
+}
+
+.message-type > .icon {
+    width: 28px;
+    height: 28px;
+    opacity: 0.3;
+    border-radius: 100%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.message-type > .input {
+    width: 90%;
+    height: 32px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    outline: none;
+}
+.message-type > .send-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    background-color: #039BE5;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}

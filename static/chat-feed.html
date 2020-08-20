@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--Icons made by
+    <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+    from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+    Icons made by
+    <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a>
+    from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+    Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a>
+    from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat * Messenger App</title>
+    <link rel="stylesheet" href="chat-feed.css">
+</head>
+<body>
+<div id="root" class="w-100">
+    <div id="chat" class="h-100 w-100 d-flex row">
+        <div class="aside-panel h-100 border p-8">
+            <div class="aside-header d-flex column a-center j-center border-bottom pb-12">
+                <div class="w-100 text-right mt-16 mb-16">
+                    <span class="text-link text-gray">Профиль ></span>
+                </div>
+                <div id="input-wrapper" class="w-100">
+                    <input id="search-input" class="mb-8 pt-8 pb-8 w-100 pl-20" type="text" name="search"
+                           placeholder="Поиск">
+                    <img id="search-icon" src="../assets/icons/search.svg" alt="search icon">
+                </div>
+            </div>
+            <div class="aside-body d-flex column a-center j-center">
+                <div class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
+                    <div class="avatar"></div>
+                    <div class="chat-info pl-8 d-flex column">
+                        <span class="text-bold mb-4">User 1</span>
+                        <span class="text-secondary">Chat text preview</span>
+                    </div>
+                    <div class="time">
+                        <span class="text-secondary">11:00</span>
+                    </div>
+                    <div class="badge-accent">
+                        <span>2</span>
+                    </div>
+                </div>
+                <div class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
+                    <div class="avatar"></div>
+                    <div class="chat-info pl-8 d-flex column">
+                        <span class="text-bold mb-4">User 2</span>
+                        <span class="text-secondary">Chat text preview</span>
+                    </div>
+                    <div class="time">
+                        <span class="text-secondary">11:00</span>
+                    </div>
+                    <div class="badge-accent">
+                        <span>5</span>
+                    </div>
+                </div>
+                <div class="user-info d-flex row pb-8 pt-8 border-bottom w-100">
+                    <div class="avatar"></div>
+                    <div class="chat-info pl-8 d-flex column">
+                        <span class="text-bold mb-4">User 3</span>
+                        <span class="message-preview">Вы:
+                                <span class="text-secondary">Chat text preview</span>
+                            </span>
+                    </div>
+                    <div class="time">
+                        <span class="text-secondary">11:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="message-field p-8 border-bottom border-right border-top">
+            <div class="message-empty w-100 h-100 text-center d-flex column j-start">
+                <div class="user-info-feed d-flex row pb-8 pt-8 mb-16 border-bottom w-100">
+                    <div class="avatar"></div>
+                    <div class="chat-info pl-8 d-flex column text-left">
+                        <span class="text-bold mb-4">User 3</span>
+                        <span class="text-secondary">Был 5 минут назад</span>
+                    </div>
+                    <img class="settings-icon p-4" src="../assets/icons/open-menu.svg" alt="feed settings icon">
+                </div>
+                <div class="messages-feed d-flex column j-end h-100">
+                    <span class="text-secondary mb-12">Сегодня</span>
+                    <div class="message-text-wrapper w-100 d-flex j-start">
+                        <div class="message-text-1 p-8 pb-16 mb-8 text-left">
+                            <span>Lorem ipsum dolor sit amet.</span>
+                            <span class="message-time text-secondary">11:00</span>
+                        </div>
+                    </div>
+                    <div class="message-text-wrapper w-100 d-flex j-start">
+                        <div class="message-text-1 p-8 pb-16 mb-8 text-left">
+                            <span>Lorem ipsum dolor sit amet.</span>
+                            <span class="message-time text-secondary">11:30</span>
+                        </div>
+                    </div>
+                    <div class="message-text-wrapper w-100 d-flex j-start">
+                        <div class="message-text-1 p-8 pb-16 mb-8 text-left">
+                            <span>Lorem ipsum dolor sit amet.</span>
+                            <span class="message-time text-secondary">12:00</span>
+                        </div>
+                    </div>
+                    <div class="message-text-wrapper w-100 d-flex j-end">
+                        <div class="message-text-2 p-8 pb-16 mb-8 text-left">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis doloribus earum eum fugit illo, ipsum iusto magni molestiae necessitatibus nostrum praesentium, quia repudiandae voluptas!</span>
+                            <span class="message-time text-primary">>> 13:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-type d-flex row s-between p-12 border-top a-center">
+                    <img class="icon" src="../assets/icons/file-upload.svg" alt="send file">
+                    <input class="input pl-12 pr-12" type="text" placeholder="Сообщение">
+                    <div class="send-button d-flex a-center j-center">
+                        <span> > </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
