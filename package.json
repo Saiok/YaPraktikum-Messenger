@@ -17,7 +17,9 @@
     "url": "https://github.com/Saiok/mf.messenger.praktikum.yandex/issues"
   },
   "homepage": "https://github.com/Saiok/mf.messenger.praktikum.yandex#readme",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
   "devDependencies": {
     "express": "4.17.1"
   }

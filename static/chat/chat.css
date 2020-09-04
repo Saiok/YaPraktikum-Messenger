@@ -1,9 +1,7 @@
-@import "styles.css";
+@import "../../styles/styles.css";
 
-main {height: 90vh}
-
-.aside-panel {width: 30%; background: #FBFBFB; box-sizing: border-box}
-.message-field {width: 70%}
+main {height: 90vh; width: 70%; box-sizing: border-box}
+aside {height: 90vh; width: 30%; background: #FBFBFB; box-sizing: border-box}
 
 input {
     font-size: 16px;

@@ -1,5 +1,5 @@
 body {font-family: 'Roboto Thin', 'Roboto Light', sans-serif}
-
+/*Width in percentage*/
 .w-100 {width: 100%}
 .w-75 {width: 75%}
 .w-50 {width: 50%}
@@ -46,6 +46,10 @@ body {font-family: 'Roboto Thin', 'Roboto Light', sans-serif}
 /*Font size*/
 .title {font-size: 24px}
 .sub-title {font-size: 16px}
+.font-size-4 {font-size: 4px}
+.font-size-8 {font-size: 8px}
+.font-size-12 {font-size: 12px}
+.font-size-14 {font-size: 14px}
 /*Colors*/
 .text-primary {color: #039BE5}
 .text-danger {color: #DF4857}
@@ -59,7 +63,7 @@ body {font-family: 'Roboto Thin', 'Roboto Light', sans-serif}
 /*Others*/
 .text-bold {font-weight: bold}
 .text-secondary {color: #999; font-size: 12px}
-.text-link {cursor: pointer}
+.text-link {cursor: pointer; text-decoration: none}
 .text-link-underlined {cursor: pointer; text-decoration: underline}
 
 /*Paddings*/
