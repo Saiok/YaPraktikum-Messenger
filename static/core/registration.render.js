@@ -5,8 +5,8 @@ const authData = {
   },
   contents: {
     headerTitle: 'Регистрация',
-    button: 'Зарегистрироваться',
     link: 'Войти',
+    linkAddress: '../authentication/auth.html'
   },
   inputs: [
     {
@@ -15,7 +15,13 @@ const authData = {
       id: 'first-name',
       placeholder: 'Имя',
       name: 'first-name',
-      required: 'required'
+      required: 'required',
+      errors: [
+        {
+          id: 'firstNameErr',
+          text: 'Введите имя.'
+        }
+      ]
     },
     {
       class: 'w-100 mb-16',
@@ -23,7 +29,13 @@ const authData = {
       id: 'last-name',
       placeholder: 'Фамилия',
       name: 'last-name',
-      required: 'required'
+      required: 'required',
+      errors: [
+        {
+          id: 'lastNameErr',
+          text: 'Введите фамилию.'
+        }
+      ]
     },
     {
       class: 'w-100 mb-16',
@@ -31,7 +43,13 @@ const authData = {
       id: 'email',
       placeholder: 'Почта',
       name: 'email',
-      required: 'required'
+      required: 'required',
+      errors: [
+        {
+          id: 'emailErr',
+          text: 'Введите правильную почту.'
+        }
+      ]
     },
     {
       class: 'w-100 mb-16',
@@ -39,7 +57,13 @@ const authData = {
       id: 'password',
       placeholder: 'Пароль',
       name: 'password',
-      required: 'required'
+      required: 'required',
+      errors: [
+        {
+          id: 'passErr',
+          text: 'Введите пароль.'
+        }
+      ]
     },
     {
       class: 'w-100 mb-16',
@@ -47,7 +71,17 @@ const authData = {
       id: 'password-confirm',
       placeholder: 'Подтвердите пароль',
       name: 'password-confirm',
-      required: 'required'
+      required: 'required',
+      errors: [
+        {
+          id: 'passConfirmErr1',
+          text: 'Введите подтверждения пароля.'
+        },
+        {
+          id: 'passConfirmErr2',
+          text: 'Пароль не совпадает.'
+        }
+      ]
     }
   ],
   classes: {
@@ -58,7 +92,6 @@ const authData = {
     headerTitle: 'title text-white',
     inputWrapper: 'inputs-wrapper w-75 h-50 display-flex flex-direction-column justify-content-around',
     actionWrapper: 'actions-wrapper pb-20 display-flex flex-direction-column align-items-center',
-    button: 'btn-accent mb-16',
     link: 'text-primary text-link'
   },
   styles: {
@@ -70,6 +103,13 @@ const authData = {
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = compiled(authData);
 
+  window.createButton.render({
+    renderAfterSelector: '.actions-wrapper > a.text-primary',
+    position: 'beforebegin',
+    classes: 'btn-accent mb-16',
+    label: 'Зарегистрироваться'
+  });
+
   const firstName = document.querySelector('#first-name');
   const lastName = document.querySelector('#last-name');
   const email = document.querySelector('#email');
@@ -80,53 +120,52 @@ const authData = {
   let lastNameErr = document.querySelector('#lastNameErr');
   let emailErr = document.querySelector('#emailErr');
   let passErr = document.querySelector('#passErr');
-  let passConfirmErr = document.querySelector('#passConfirmErr');
+  let passConfirmErr1 = document.querySelector('#passConfirmErr1');
+  let passConfirmErr2 = document.querySelector('#passConfirmErr2');
 
   firstName.onfocus = () => {
-    if (firstNameErr) removeChild(firstNameErr.parentNode, firstNameErr);
+    window.formValidation.hideElement(firstNameErr);
   }
   lastName.onfocus = () => {
-    if (lastNameErr) removeChild(lastNameErr.parentNode, lastNameErr);
+    window.formValidation.hideElement(lastNameErr);
   }
   passwordConfirm.onfocus = () => {
-    if (passConfirmErr) removeChild(passConfirmErr.parentNode, passConfirmErr);
+    window.formValidation.hideElement(passConfirmErr1);
+    window.formValidation.hideElement(passConfirmErr2);
   }
   email.onfocus = () => {
-    if (emailErr) removeChild(emailErr.parentNode, emailErr);
+    window.formValidation.hideElement(emailErr);
   }
   password.onfocus = () => {
-    if (passErr) removeChild(passErr.parentNode, passErr);
+    window.formValidation.hideElement(passErr);
   }
 
   firstName.onblur = () => {
-    checkName(firstName);
+    window.formValidation.checkName(firstName, firstNameErr);
   }
   lastName.onblur = () => {
-    checkName(lastName);
+    window.formValidation.checkName(lastName, lastNameErr);
   }
   email.onblur = () => {
-    checkEmail(email);
+    window.formValidation.checkEmail(email, emailErr);
   }
   passwordConfirm.onblur = () => {
-    checkPassword(passwordConfirm);
+    window.formValidation.checkPasswordConfirm(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
   }
   password.onblur = () => {
-    checkPassword(password);
+    window.formValidation.checkPassword(password, passErr);
+    if (password.value && passwordConfirm.value) {
+      window.formValidation.checkPasswordConfirm(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
+    }
   }
 
   const button = document.querySelector('.actions-wrapper > .btn-accent');
   button.addEventListener('click', function ($event) {
-    if (emailErr) removeChild(emailErr.parentNode, emailErr);
-    if (passErr) removeChild(passErr.parentNode, passErr);
-    if (firstNameErr) removeChild(firstNameErr.parentNode, firstNameErr);
-    if (lastNameErr) removeChild(lastNameErr.parentNode, lastNameErr);
-    if (passConfirmErr) removeChild(passConfirmErr.parentNode, passConfirmErr);
-
-    let emailValid = checkEmail(email);
-    let passValid = checkPassword(password);
-    let firstNameValid = checkName(firstName);
-    let lastNameValid = checkName(lastName);
-    let passConfirmValid = checkPassword(passwordConfirm);
+    let emailValid = window.formValidation.checkEmail(email, emailErr);
+    let passValid = window.formValidation.checkPassword(password, passErr);
+    let firstNameValid = window.formValidation.checkName(firstName, firstNameErr);
+    let lastNameValid = window.formValidation.checkName(lastName, lastNameErr);
+    let passConfirmValid = window.formValidation.checkPassword(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
 
     if (emailValid && passValid && firstNameValid && lastNameValid && passConfirmValid) {
       console.log('[FIRSTNAME] - ', firstName.value);
@@ -136,77 +175,4 @@ const authData = {
       window.location.href = '../chat/chat.html';
     }
   });
-
-  function insertAfter(referenceNode, newNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  }
-
-  function removeChild(parentNode, child) {
-    if (!parentNode) return;
-    parentNode.removeChild(child);
-  }
-
-  function checkEmail(email) {
-    const EMAIL_REGEXP = new RegExp(/[\w\.\-]{3,}\@\w{1,}\.\w{1,}/, 'gi');
-    const emailValid = EMAIL_REGEXP.test(email.value);
-
-    if (!email || !emailValid) {
-      emailErr = document.createElement('span');
-      emailErr.id = 'emailErr';
-      emailErr.classList.add('font-size-14');
-      emailErr.classList.add('text-danger');
-      emailErr.textContent = 'Введите правильный email.';
-      insertAfter(email, emailErr);
-    }
-
-    return emailValid;
-  }
-
-  function checkPassword(pass) {
-    if (pass && !pass.value && pass.id === 'password') {
-      passErr = document.createElement('span');
-      passErr.id = 'passErr';
-      passErr.classList.add('font-size-14');
-      passErr.classList.add('text-danger');
-      passErr.textContent = 'Введите пароль';
-      insertAfter(password, passErr);
-    }
-
-    if ((pass && !pass.value && pass.id === 'password-confirm') || (pass.value !== password.value)) {
-      passConfirmErr = document.createElement('span');
-      passConfirmErr.id = 'passConfirmErr';
-      passConfirmErr.classList.add('font-size-14');
-      passConfirmErr.classList.add('text-danger');
-      passConfirmErr.textContent = !pass.value ? 'Введите пароль' : '';
-      passConfirmErr.textContent = !pass.value !== password.value ? 'Пароль не совпадает.' : '';
-      insertAfter(passwordConfirm, passConfirmErr);
-    }
-
-    return pass.value.length !== 0;
-  }
-
-  function checkName(name) {
-    const NAME_REGEXP = new RegExp(/[A-Zaz]/, 'gi');
-    const nameValid = NAME_REGEXP.test(name.value);
-
-    if (!nameValid && name.id === 'first-name') {
-      firstNameErr = document.createElement('span');
-      firstNameErr.id = 'firstNameErr';
-      firstNameErr.classList.add('font-size-14');
-      firstNameErr.classList.add('text-danger');
-      firstNameErr.textContent = 'Введите правильное имя.';
-      insertAfter(firstName, firstNameErr);
-    }
-
-    if (!nameValid && name.id === 'last-name') {
-      lastNameErr = document.createElement('span');
-      lastNameErr.id = 'lastNameErr';
-      lastNameErr.classList.add('font-size-14');
-      lastNameErr.classList.add('text-danger');
-      lastNameErr.textContent = 'Введите правильное фамилию.';
-      insertAfter(lastName, lastNameErr);
-    }
-
-    return name.value.length !== 0;
-  }
 })()

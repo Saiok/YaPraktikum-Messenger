@@ -1,6 +1,8 @@
 @import "../../styles/styles.css";
 
-main {height: 90vh}
+main {
+    height: 90vh
+}
 
 .form-wrapper {
     width: 400px;
@@ -12,12 +14,9 @@ main {height: 90vh}
     border-top-right-radius: 5px;
 }
 
-.inputs-wrapper {}
-
 .inputs-wrapper > input {
     font-size: 16px;
     box-sizing: border-box;
-    outline: none;
     border: none;
     border-bottom: 1px solid #ccc;
     padding-bottom: 4px;

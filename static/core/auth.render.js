@@ -5,7 +5,6 @@ const authData = {
   },
   contents: {
     headerTitle: 'Вход',
-    button: 'Войти',
     link: 'Нет аккаунта?',
     linkAddress: '../authentication/registration.html'
   },
@@ -16,7 +15,13 @@ const authData = {
       id: 'email',
       placeholder: 'Почта',
       name: 'email',
-      required: 'required'
+      required: 'required',
+      errors: [
+        {
+          id: 'emailErr',
+          text: 'Введите правильную почту.'
+        }
+      ]
     },
     {
       class: 'w-100 mb-16',
@@ -24,7 +29,13 @@ const authData = {
       id: 'password',
       placeholder: 'Пароль',
       name: 'password',
-      required: 'required'
+      required: 'required',
+      errors: [
+        {
+        id: 'passErr',
+        text: 'Введите пароль'
+        }
+      ]
     }
   ],
   classes: {
@@ -35,7 +46,6 @@ const authData = {
     headerTitle: 'title text-white',
     inputWrapper: 'inputs-wrapper w-75 display-flex flex-direction-column justify-content-around',
     actionWrapper: 'actions-wrapper pb-20 display-flex flex-direction-column',
-    button: 'btn-accent mb-16',
     link: 'text-primary text-link'
   },
   styles: {
@@ -53,27 +63,31 @@ const authData = {
   let emailErr = document.querySelector('#emailErr');
   let passErr = document.querySelector('#passErr');
 
+  window.createButton.render({
+    renderAfterSelector: '.actions-wrapper > a.text-primary',
+    position: 'beforebegin',
+    classes: 'btn-accent mb-16',
+    label: 'Войти'
+  });
+
   email.onfocus = () => {
-    if (emailErr) removeChild(emailErr.parentNode, emailErr);
+    window.formValidation.hideElement(emailErr);
   }
   password.onfocus = () => {
-    if (passErr) removeChild(passErr.parentNode, passErr);
+    window.formValidation.hideElement(passErr);
   }
 
   email.onblur = () => {
-    checkEmail(email);
+    window.formValidation.checkEmail(email, emailErr);
   }
   password.onblur = () => {
-    checkPassword(password);
+    window.formValidation.checkPassword(password, passErr);
   }
 
   const button = document.querySelector('.actions-wrapper > .btn-accent');
   button.addEventListener('click', function ($event) {
-    if (emailErr) removeChild(emailErr.parentNode, emailErr);
-    if (passErr) removeChild(passErr.parentNode, passErr);
-
-    let emailValid = checkEmail(email);
-    let passValid = checkPassword(password);
+    let emailValid = window.formValidation.checkEmail(email, emailErr);
+    let passValid = window.formValidation.checkPassword(password, passErr);
 
     if (emailValid && passValid) {
       console.log('[EMAIL] - ', email.value);
@@ -81,42 +95,4 @@ const authData = {
       window.location.href = '../chat/chat.html';
     }
   });
-
-  function insertAfter(referenceNode, newNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  }
-
-  function removeChild(parentNode, child) {
-    if (!parentNode) return;
-    parentNode.removeChild(child);
-  }
-
-  function checkEmail(email) {
-    const EMAIL_REGEXP = new RegExp(/[\w\.\-]{3,}\@\w{1,}\.\w{1,}/, 'gi');
-    const emailValid = EMAIL_REGEXP.test(email.value);
-
-    if (!email || !emailValid) {
-      emailErr = document.createElement('span');
-      emailErr.id = 'emailErr';
-      emailErr.classList.add('font-size-14');
-      emailErr.classList.add('text-danger');
-      emailErr.textContent = 'Введите правильный email.';
-      insertAfter(email, emailErr);
-    }
-
-    return emailValid;
-  }
-
-  function checkPassword(pass) {
-    if (pass && !pass.value) {
-      passErr = document.createElement('span');
-      passErr.id = 'passErr';
-      passErr.classList.add('font-size-14');
-      passErr.classList.add('text-danger');
-      passErr.textContent = 'Введите пароль';
-      insertAfter(password, passErr);
-    }
-
-    return pass.value.length !== 0;
-  }
 })()

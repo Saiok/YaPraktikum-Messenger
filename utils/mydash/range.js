@@ -12,14 +12,27 @@ function range(start, end, step, isRight) {
   }
   let arr = [];
 
-  if (start < end) {
-    for (let i = start; i < end; i+=step) {
-      arr.push(i);
+  if (!isRight) {
+    if (start < end) {
+      for (let i = start; i < end; i+=step) {
+        arr.push(i);
+      }
+    } else if (start > end) {
+      if (step > 0) return [];
+      for (let i = start; i > end; i+=step) {
+        arr.push(i);
+      }
     }
-  } else if (start > end) {
-    if (step > 0) return [];
-    for (let i = start; i > end; i+=step) {
-      arr.push(i);
+  } else {
+    if (start < end) {
+      for (let i = end; i > start; i-=step) {
+        arr.push(i);
+      }
+    } else if (start > end) {
+      if (step > 0) return [];
+      for (let i = end; i < start; i-=step) {
+        arr.push(i);
+      }
     }
   }
 

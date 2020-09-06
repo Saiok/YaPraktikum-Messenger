@@ -107,6 +107,14 @@ const chatMainEmpty = {
     mainElement.innerHTML = compiledEmpty(chatMainEmpty);
   }
 
+  window.createButton.render({
+    renderAfterSelector: '.message-type > input.input',
+    position: 'afterend',
+    classes: 'send-button display-flex align-items-center justify-content-center',
+    label: ' > ',
+    rounded: true
+  });
+
   const input = document.querySelector('#message-input');
   const button = document.querySelector('.message-type > .send-button');
   button.addEventListener('click', function ($event) {

@@ -1,7 +1,7 @@
 window.buttonTemplate = (function () {
   return `
-    <button class="<%= classes %>" id="<%= id %>">
-        <=% label %>
+    <button class="<%= classes %>" <% if (id) { %> id="<%= id %>" <% } %>>
+        <%= label %>
     </button>
   `
 })()

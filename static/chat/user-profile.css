@@ -1,7 +1,11 @@
 @import "../../styles/styles.css";
 
-main {height: 90vh}
-.user-profile {position: relative}
+main {
+    height: 90vh
+}
+.user-profile {
+    position: relative
+}
 
 .avatar {
     width: 128px;
@@ -23,7 +27,9 @@ main {height: 90vh}
     max-width: 500px;
     box-sizing: border-box
 }
-.general-info-inner {font-size: 14px}
+.general-info-inner {
+    font-size: 14px
+}
 
 .actions {
     margin-top: 56px;

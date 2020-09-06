@@ -86,10 +86,7 @@ window.chatMainTemplate = (function() {
       
       <div class="<%= classes.actionWrapper %>">
         <img class="<%= actionImg.class %>" src="<%= actionImg.src %>" alt="<%= actionImg.alt %>">
-          <input class="<%= actionInput.class %>" type="<%= actionInput.type %>" id="<%= actionInput.id %>" placeholder="<%= actionInput.placeholder %>">
-            <div class="<%= classes.sendButton %>">
-              <span> <%= contents.sendButton %> </span>
-            </div>
+        <input class="<%= actionInput.class %>" type="<%= actionInput.type %>" id="<%= actionInput.id %>" placeholder="<%= actionInput.placeholder %>">
       </div>
     </div>
   </div>
