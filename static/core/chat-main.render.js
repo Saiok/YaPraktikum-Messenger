@@ -41,7 +41,7 @@ const chatMain = {
     },
     {
       classes: {
-        messageWrapper: 'message-text-wrapper w-100 display-flex justify-content-end',
+        messageWrapper: 'message-text-wrapper w-100 display-flex justify-content-flex-end',
         message: 'message-text-2 p-8 pb-16 mb-8 text-left',
         messageTime: 'message-time text-primary'
       },
@@ -59,7 +59,7 @@ const chatMain = {
     chatInfo: 'chat-info pl-8 display-flex flex-direction-column text-left',
     chatUserName: 'text-bold mb-4',
     chatUserActivity: 'text-secondary',
-    chatContentWrapper: 'messages-feed display-flex flex-direction-column justify-content-end h-100',
+    chatContentWrapper: 'messages-feed display-flex flex-direction-column justify-content-flex-end h-100',
     chattingDay: 'text-secondary mb-12',
     messageWrapper: 'message-text-wrapper w-100 display-flex justify-content-start',
     message: 'message-text-1 p-8 pb-16 mb-8 text-left',
