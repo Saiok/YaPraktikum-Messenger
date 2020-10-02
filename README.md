@@ -13,6 +13,7 @@ https://suspicious-wilson-54a1a1.netlify.app - в данный домен заг
 
 Запуск приложения:
  - `node server` - запуск сервера NodeJS
+ Запускайте сервер с ветки master
  
  ## Доступные страницы
  - Авторизация: `/` или `/authentication/auth.html`
