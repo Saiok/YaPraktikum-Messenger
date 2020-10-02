@@ -1,6 +1,6 @@
 window.formValidation = (function () {
   function checkEmail(email, err) {
-    const EMAIL_REGEXP = new RegExp(/^[a-zA-Z\.\-]{3,}\@[a-zA-Z]{1,}\.[a-zA-Z]{1,}$/, 'gi');
+    const EMAIL_REGEXP = new RegExp(/^[a-zA-Z][a-zA-Z0-9\.\-]{3,}\@[a-zA-Z0-9]{1,}\.[a-zA-Z]{1,}$/, 'gi');
     const emailValid = EMAIL_REGEXP.test(email.value);
 
     if (!email || !emailValid) {
