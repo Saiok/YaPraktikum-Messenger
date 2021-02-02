@@ -1,4 +1,4 @@
-const authData = {
+const registrationData = {
   images: {
     headerIconSrc: '../../assets/icons/mail-white.svg',
     headerIconAlt: 'messenger-icon'
@@ -101,7 +101,7 @@ const authData = {
 (function (): void {
   const compiled = _.template(window['authenticationTemplate']);
   const mainElement: HTMLElement = document.querySelector('main');
-  mainElement.innerHTML = compiled(authData);
+  mainElement.innerHTML = compiled(registrationData);
 
   window['createButton'].render({
     renderAfterSelector: '.actions-wrapper > a.text-primary',

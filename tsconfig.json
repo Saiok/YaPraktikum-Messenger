@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "outDir": "./dist",
+    "allowJs": true
+  },
+  "include": ["./static/**/*", "./utils/**/*"],
+  "exclude": ["node_modules", "*.js"]
+}

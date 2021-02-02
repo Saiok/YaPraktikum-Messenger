@@ -1,3 +1,10 @@
+declare global {
+  interface Array<T> {
+    keys(): number[];
+    fill(args?: T): number[];
+  }
+}
+
 export function range(start: number, end: number, step: number, isRight: boolean): number[] | undefined {
   if (step === 0) {
     return [...new Array(end).keys()].fill(start);

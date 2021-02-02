@@ -1,4 +1,4 @@
-const errorData = {
+const error500Data = {
   error: {
     code: 500,
     text: 'Internal Server Error.'
@@ -21,6 +21,8 @@ const errorData = {
     }
   }
 };
-const compiled = _.template(window['errorTemplate']);
-const mainElement = document.querySelector('main');
-mainElement.innerHTML = compiled(errorData);
+(function(): void {
+  const compiled = _.template(window['errorTemplate']);
+  const mainElement = document.querySelector('main');
+  mainElement.innerHTML = compiled(error500Data);
+})();
