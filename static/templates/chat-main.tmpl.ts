@@ -56,7 +56,7 @@
 </div>
 */
 
-window.chatMainTemplate = (function() {
+window['chatMainTemplate'] = (function(): string {
   return `
   <div class="<%= classes.messageFieldWrapper %>">
     <div class="<%= classes.messageField %>">
@@ -90,5 +90,5 @@ window.chatMainTemplate = (function() {
       </div>
     </div>
   </div>
-  `
-})()
+  `;
+})();

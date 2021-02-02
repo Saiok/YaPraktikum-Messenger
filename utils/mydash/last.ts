@@ -1,10 +1,8 @@
-function last(list) {
+export function last<T>(list: T[]): T | undefined {
   if (!Array.isArray(list)) {
     return;
   }
-  let length = list.length - 1;
+  const length = list.length - 1;
 
   return length >= 0 ? list[length] : undefined;
 }
-
-module.exports = last;

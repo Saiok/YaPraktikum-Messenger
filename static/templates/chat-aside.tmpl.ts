@@ -28,7 +28,7 @@
 </div>
 */
 
-window.chatAsideTemplate = (function() {
+window['chatAsideTemplate'] = (function(): string {
   return `
   <div class="<%= classes.wrapper %>">
     <div class="<%= classes.asideHeader %>">
@@ -68,5 +68,5 @@ window.chatAsideTemplate = (function() {
       <% }); %>
     </ul>
   </div>
-  `
-})()
+  `;
+})();

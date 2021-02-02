@@ -1,4 +1,4 @@
-window.userProfileTemplate = (function() {
+window['userProfileTemplate'] = (function(): string {
   return `
   <div class="<%= classes.wrapper %>">
   <div class="<%= classes.avatarWrapper %>">
@@ -20,5 +20,5 @@ window.userProfileTemplate = (function() {
     <span class="<%= classes.link %>"><%= contents.actionExit %></span>
   </div>
 </div>
-  `
-})()
+  `;
+})();

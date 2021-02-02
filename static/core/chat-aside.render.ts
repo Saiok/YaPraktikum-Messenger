@@ -87,8 +87,8 @@ const asideData = {
   }
 };
 
-(function (){
-  const compiled = _.template(window.chatAsideTemplate);
-  const asideElement = document.querySelector('aside');
+(function (): void {
+  const compiled = _.template(window['chatAsideTemplate']);
+  const asideElement: HTMLElement = document.querySelector('aside');
   asideElement.innerHTML = compiled(asideData);
-})()
+})();

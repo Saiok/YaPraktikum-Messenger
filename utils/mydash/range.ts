@@ -1,7 +1,14 @@
-function range(start, end, step, isRight) {
-  if (step === 0) return [...new Array(end).keys()].fill(start)
-  if (!start && start !== 0 && !end) return;
-  if (start === 0 && !end) return [];
+export function range(start: number, end: number, step: number, isRight: boolean): number[] | undefined {
+  if (step === 0) {
+    return [...new Array(end).keys()].fill(start);
+  }
+  if (!start && start !== 0 && !end) {
+    return;
+  }
+  if (start === 0 && !end) {
+    return [];
+  }
+  
   start = start || 0;
   if (!end) {
     end = start;
@@ -10,7 +17,7 @@ function range(start, end, step, isRight) {
   if (!step && step !== 0) {
     step = start < end ? 1 : -1;
   }
-  let arr = [];
+  const arr = [];
 
   if (!isRight) {
     if (start < end) {
@@ -38,5 +45,3 @@ function range(start, end, step, isRight) {
 
   return arr;
 }
-
-module.exports = range;

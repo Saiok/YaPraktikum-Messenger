@@ -1,6 +1,6 @@
-const range = require('range')
+import { range } from './range';
 
-function rangeRight(start, end, step) {
+export function rangeRight(start: number, end: number, step: number): number[] {
   if (!end) {
     end = start;
     start = 0;
@@ -10,5 +10,3 @@ function rangeRight(start, end, step) {
   }
   return range(start, end, step, true);
 }
-
-module.exports = rangeRight;

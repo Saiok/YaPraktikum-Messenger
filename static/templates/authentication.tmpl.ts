@@ -1,4 +1,4 @@
-window.authenticationTemplate = (function() {
+window['authenticationTemplate'] = (function(): string {
   return `
   <div class="<%= classes.wrapper %>">
       <div class="<%= classes.formWrapper %>">
@@ -21,5 +21,5 @@ window.authenticationTemplate = (function() {
           </div>
       </div>
   </div>
-`
+`;
 })();

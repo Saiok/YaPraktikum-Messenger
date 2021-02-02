@@ -98,74 +98,74 @@ const authData = {
     formHeader: 'box-sizing: border-box'
   }
 };
-(function () {
-  const compiled = _.template(window.authenticationTemplate);
-  const mainElement = document.querySelector('main');
+(function (): void {
+  const compiled = _.template(window['authenticationTemplate']);
+  const mainElement: HTMLElement = document.querySelector('main');
   mainElement.innerHTML = compiled(authData);
 
-  window.createButton.render({
+  window['createButton'].render({
     renderAfterSelector: '.actions-wrapper > a.text-primary',
     position: 'beforebegin',
     classes: 'btn-accent mb-16',
     label: 'Зарегистрироваться'
   });
 
-  const firstName = document.querySelector('#first-name');
-  const lastName = document.querySelector('#last-name');
-  const email = document.querySelector('#email');
-  const password = document.querySelector('#password');
-  const passwordConfirm = document.querySelector('#password-confirm');
+  const firstName: HTMLInputElement = document.querySelector('#first-name');
+  const lastName: HTMLInputElement = document.querySelector('#last-name');
+  const email: HTMLInputElement = document.querySelector('#email');
+  const password: HTMLInputElement = document.querySelector('#password');
+  const passwordConfirm: HTMLInputElement = document.querySelector('#password-confirm');
 
-  let firstNameErr = document.querySelector('#firstNameErr');
-  let lastNameErr = document.querySelector('#lastNameErr');
-  let emailErr = document.querySelector('#emailErr');
-  let passErr = document.querySelector('#passErr');
-  let passConfirmErr1 = document.querySelector('#passConfirmErr1');
-  let passConfirmErr2 = document.querySelector('#passConfirmErr2');
+  const firstNameErr: HTMLElement = document.querySelector('#firstNameErr');
+  const lastNameErr: HTMLElement = document.querySelector('#lastNameErr');
+  const emailErr: HTMLElement = document.querySelector('#emailErr');
+  const passErr: HTMLElement = document.querySelector('#passErr');
+  const passConfirmErr1: HTMLElement = document.querySelector('#passConfirmErr1');
+  const passConfirmErr2: HTMLElement = document.querySelector('#passConfirmErr2');
 
-  firstName.onfocus = () => {
-    window.formValidation.hideElement(firstNameErr);
-  }
-  lastName.onfocus = () => {
-    window.formValidation.hideElement(lastNameErr);
-  }
-  passwordConfirm.onfocus = () => {
-    window.formValidation.hideElement(passConfirmErr1);
-    window.formValidation.hideElement(passConfirmErr2);
-  }
-  email.onfocus = () => {
-    window.formValidation.hideElement(emailErr);
-  }
-  password.onfocus = () => {
-    window.formValidation.hideElement(passErr);
-  }
+  firstName.onfocus = (): void => {
+    window['formValidation'].hideElement(firstNameErr);
+  };
+  lastName.onfocus = (): void => {
+    window['formValidation'].hideElement(lastNameErr);
+  };
+  passwordConfirm.onfocus = (): void => {
+    window['formValidation'].hideElement(passConfirmErr1);
+    window['formValidation'].hideElement(passConfirmErr2);
+  };
+  email.onfocus = (): void => {
+    window['formValidation'].hideElement(emailErr);
+  };
+  password.onfocus = (): void => {
+    window['formValidation'].hideElement(passErr);
+  };
 
-  firstName.onblur = () => {
-    window.formValidation.checkName(firstName, firstNameErr);
-  }
-  lastName.onblur = () => {
-    window.formValidation.checkName(lastName, lastNameErr);
-  }
-  email.onblur = () => {
-    window.formValidation.checkEmail(email, emailErr);
-  }
-  passwordConfirm.onblur = () => {
-    window.formValidation.checkPasswordConfirm(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
-  }
-  password.onblur = () => {
-    window.formValidation.checkPassword(password, passErr);
+  firstName.onblur = (): void => {
+    window['formValidation'].checkName(firstName, firstNameErr);
+  };
+  lastName.onblur = (): void => {
+    window['formValidation'].checkName(lastName, lastNameErr);
+  };
+  email.onblur = (): void => {
+    window['formValidation'].checkEmail(email, emailErr);
+  };
+  passwordConfirm.onblur = (): void => {
+    window['formValidation'].checkPasswordConfirm(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
+  };
+  password.onblur = (): void => {
+    window['formValidation'].checkPassword(password, passErr);
     if (password.value && passwordConfirm.value) {
-      window.formValidation.checkPasswordConfirm(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
+      window['formValidation'].checkPasswordConfirm(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
     }
-  }
+  };
 
-  const button = document.querySelector('.actions-wrapper > .btn-accent');
-  button.addEventListener('click', function ($event) {
-    let emailValid = window.formValidation.checkEmail(email, emailErr);
-    let passValid = window.formValidation.checkPassword(password, passErr);
-    let firstNameValid = window.formValidation.checkName(firstName, firstNameErr);
-    let lastNameValid = window.formValidation.checkName(lastName, lastNameErr);
-    let passConfirmValid = window.formValidation.checkPassword(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
+  const button: HTMLElement = document.querySelector('.actions-wrapper > .btn-accent');
+  button.addEventListener('click', function (): void {
+    const emailValid: boolean = window['formValidation'].checkEmail(email, emailErr);
+    const passValid: boolean = window['formValidation'].checkPassword(password, passErr);
+    const firstNameValid: boolean = window['formValidation'].checkName(firstName, firstNameErr);
+    const lastNameValid: boolean = window['formValidation'].checkName(lastName, lastNameErr);
+    const passConfirmValid: boolean = window['formValidation'].checkPassword(passwordConfirm, passConfirmErr1, passConfirmErr2, password.value);
 
     if (emailValid && passValid && firstNameValid && lastNameValid && passConfirmValid) {
       console.log('[FIRSTNAME] - ', firstName.value);
@@ -175,4 +175,4 @@ const authData = {
       window.location.href = '../chat/chat.html';
     }
   });
-})()
+})();

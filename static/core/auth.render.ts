@@ -53,41 +53,41 @@ const authData = {
   }
 };
 
-(function () {
-  const compiled = _.template(window.authenticationTemplate);
+(function (): void {
+  const compiled = _.template(window['authenticationTemplate']);
   const mainElement = document.querySelector('main');
   mainElement.innerHTML = compiled(authData);
 
-  const email = document.querySelector('#email');
-  const password = document.querySelector('#password');
-  let emailErr = document.querySelector('#emailErr');
-  let passErr = document.querySelector('#passErr');
+  const email: HTMLInputElement = document.querySelector('#email');
+  const password: HTMLInputElement = document.querySelector('#password');
+  const emailErr: HTMLElement = document.querySelector('#emailErr');
+  const passErr: HTMLElement = document.querySelector('#passErr');
 
-  window.createButton.render({
+  window['createButton'].render({
     renderAfterSelector: '.actions-wrapper > a.text-primary',
     position: 'beforebegin',
     classes: 'btn-accent mb-16',
     label: 'Войти'
   });
 
-  email.onfocus = () => {
-    window.formValidation.hideElement(emailErr);
-  }
-  password.onfocus = () => {
-    window.formValidation.hideElement(passErr);
-  }
+  email.onfocus = (): void => {
+    window['formValidation'].hideElement(emailErr);
+  };
+  password.onfocus = (): void => {
+    window['formValidation'].hideElement(passErr);
+  };
 
-  email.onblur = () => {
-    window.formValidation.checkEmail(email, emailErr);
-  }
-  password.onblur = () => {
-    window.formValidation.checkPassword(password, passErr);
-  }
+  email.onblur = (): void => {
+    window['formValidation'].checkEmail(email, emailErr);
+  };
+  password.onblur = (): void => {
+    window['formValidation'].checkPassword(password, passErr);
+  };
 
   const button = document.querySelector('.actions-wrapper > .btn-accent');
-  button.addEventListener('click', function ($event) {
-    let emailValid = window.formValidation.checkEmail(email, emailErr);
-    let passValid = window.formValidation.checkPassword(password, passErr);
+  button.addEventListener('click', function (): void {
+    const emailValid = window['formValidation'].checkEmail(email, emailErr);
+    const passValid = window['formValidation'].checkPassword(password, passErr);
 
     if (emailValid && passValid) {
       console.log('[EMAIL] - ', email.value);
@@ -95,4 +95,4 @@ const authData = {
       window.location.href = '../chat/chat.html';
     }
   });
-})()
+})();

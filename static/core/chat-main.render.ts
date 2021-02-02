@@ -96,18 +96,18 @@ const chatMainEmpty = {
   }
 };
 
-(function () {
-  let chatSelected = false;
-  const compiled = _.template(window.chatMainTemplate);
-  const compiledEmpty = _.template(window.chatMainEmptyTemplate);
-  const mainElement = document.querySelector('main');
+(function (): void {
+  const chatSelected = false;
+  const compiled = _.template(window['chatMainTemplate']);
+  const compiledEmpty = _.template(window['chatMainEmptyTemplate']);
+  const mainElement: HTMLElement = document.querySelector('main');
   if (!chatSelected) {
     mainElement.innerHTML = compiled(chatMain);
   } else {
     mainElement.innerHTML = compiledEmpty(chatMainEmpty);
   }
 
-  window.createButton.render({
+  window['createButton'].render({
     renderAfterSelector: '.message-type > input.input',
     position: 'afterend',
     classes: 'send-button display-flex align-items-center justify-content-center',
@@ -115,9 +115,9 @@ const chatMainEmpty = {
     rounded: true
   });
 
-  const input = document.querySelector('#message-input');
-  const button = document.querySelector('.message-type > .send-button');
-  button.addEventListener('click', function ($event) {
+  const input: HTMLInputElement = document.querySelector('#message-input');
+  const button: HTMLElement = document.querySelector('.message-type > .send-button');
+  button.addEventListener('click', function () {
     const messageValid = checkMessage(input);
 
     if (messageValid) {
@@ -125,9 +125,9 @@ const chatMainEmpty = {
     }
   });
 
-  function checkMessage(input) {
-    const MESSAGE_REGEXP = new RegExp(/^\s*$/, 'gi');
+  function checkMessage(input: HTMLInputElement): boolean {
+    const MESSAGE_REGEXP = /^\s*$/gi;
 
     return MESSAGE_REGEXP.test(input.value);
   }
-})()
+})();

@@ -1,8 +1,8 @@
-window.createButton = (function () {
-  const compiled = _.template(window.buttonTemplate);
-  const compiledRounded = _.template(window.roundedButtonTemplate);
+window['createButton'] = (function (): any {
+  const compiled = _.template(window['buttonTemplate']);
+  const compiledRounded = _.template(window['roundedButtonTemplate']);
 
-  function render(buttonProperties) {
+  function render(buttonProperties): void {
     const {renderAfterSelector, position, classes, label, id, rounded} = buttonProperties;
     const renderAfter = document.querySelector(renderAfterSelector);
     let btn;
@@ -16,5 +16,5 @@ window.createButton = (function () {
 
   return {
     render
-  }
-})()
+  };
+})();

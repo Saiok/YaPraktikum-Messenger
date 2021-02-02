@@ -6,12 +6,12 @@
 </div>
 */
 
-window.chatMainEmptyTemplate = (function () {
+window['chatMainEmptyTemplate'] = (function (): string {
   return `
   <div class="<%= classes.messageFieldWrapper %>">
     <div class="<%= classes.messageField %>">
       <span class="<%= classes.text %>"><%= contents.text %></span>
     </div>
   </div>
-`
-})()
+`;
+})();

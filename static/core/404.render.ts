@@ -21,6 +21,6 @@ const errorData = {
     }
   }
 };
-const compiled = _.template(window.errorTemplate);
+const compiled = _.template(window['errorTemplate']);
 const mainElement = document.querySelector('main');
 mainElement.innerHTML = compiled(errorData);
