@@ -67,9 +67,10 @@ const auth = new AuthComponent(authTemplate, authData);
 const button = new ButtonComponent(buttonTemplate, {
   classes: 'btn-accent mb-16',
   label: 'Войти',
+  id: null
 });
 auth.render();
-button.render('.actions-wrapper > a.text-primary');
+button.render('.actions-wrapper');
 
 const email: HTMLInputElement = document.querySelector('#email');
 const password: HTMLInputElement = document.querySelector('#password');

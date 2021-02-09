@@ -105,13 +105,14 @@ const registrationData = {
 };
 const btnData = {
   classes: 'btn-accent mb-16',
-  label: 'Зарегистрироваться'
+  label: 'Зарегистрироваться',
+  id: null
 };
 
 const auth = new BasePageComponent(authenticationTemplate, registrationData);
 auth.render();
 const btn = new BasePageComponent(buttonTemplate, btnData);
-btn.render('.actions-wrapper > a.text-primary');
+btn.render('.actions-wrapper');
 
 const firstName: HTMLInputElement = document.querySelector('#first-name');
 const lastName: HTMLInputElement = document.querySelector('#last-name');
@@ -162,8 +163,7 @@ password.onblur = (): void => {
   }
 };
 
-const button: HTMLElement = document.querySelector('.actions-wrapper > .btn-accent');
-button.addEventListener('click', function (): void {
+btn.compiledElement.addEventListener('click', function (): void {
   const emailValid: boolean = FormValidation.checkEmail(email, emailErr);
   const passValid: boolean = FormValidation.checkPassword(password, passErr);
   const firstNameValid: boolean = FormValidation.checkName(firstName, firstNameErr);

@@ -91,4 +91,4 @@ const asideData = {
 };
 
 const chatAside = new BasePageComponent(chatAsideTemplate, asideData);
-chatAside.render();
+chatAside.render('aside');
