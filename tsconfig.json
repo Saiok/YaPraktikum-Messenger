@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "es6",
     "module": "es6",
-    "outDir": "./dist",
+    "outDir": "./build/src",
     "allowJs": true,
     "lib": ["es2016", "dom", "es2017"]
   },
-  "include": ["./static/**/*", "./utils/**/*"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "*.js"]
 }

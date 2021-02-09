@@ -1,3 +1,6 @@
+import template from '../templates/error-page.tmpl';
+import BasePageComponent from '../components/base-page.component';
+
 const errorData = {
   error: {
     code: 404,
@@ -21,8 +24,6 @@ const errorData = {
     }
   }
 };
-(function(): void {
-  const compiled = _.template(window['errorTemplate']);
-  const mainElement = document.querySelector('main');
-  mainElement.innerHTML = compiled(errorData);
-})();
+
+const errorPage = new BasePageComponent(template, errorData);
+errorPage.render();

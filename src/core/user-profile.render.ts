@@ -1,3 +1,6 @@
+import BasePageComponent from '../components/base-page.component';
+import userProfileTemplate from '../templates/user-profile.tmpl';
+
 const userProfileData = {
   contents: {
     fullName: 'User Full Name',
@@ -31,6 +34,6 @@ const userProfileData = {
     link: 'text-danger text-link pt-16 pb-12'
   }
 };
-const compiled = _.template(window['userProfileTemplate']);
-const mainElement = document.querySelector('main');
-mainElement.innerHTML = compiled(userProfileData);
+
+const userProfile = new BasePageComponent(userProfileTemplate, userProfileData);
+userProfile.render();

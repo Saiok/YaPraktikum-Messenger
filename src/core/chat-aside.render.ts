@@ -1,3 +1,6 @@
+import BasePageComponent from '../components/base-page.component';
+import chatAsideTemplate from '../templates/chat-aside.tmpl';
+
 const asideData = {
   contents: {
     profileLink: 'Профиль >',
@@ -87,8 +90,5 @@ const asideData = {
   }
 };
 
-(function (): void {
-  const compiled = _.template(window['chatAsideTemplate']);
-  const asideElement: HTMLElement = document.querySelector('aside');
-  asideElement.innerHTML = compiled(asideData);
-})();
+const chatAside = new BasePageComponent(chatAsideTemplate, asideData);
+chatAside.render();

@@ -1,4 +1,7 @@
-const error500Data = {
+import template from '../templates/error-page.tmpl';
+import BasePageComponent from '../components/base-page.component';
+
+const errorData = {
   error: {
     code: 500,
     text: 'Internal Server Error.'
@@ -21,8 +24,6 @@ const error500Data = {
     }
   }
 };
-(function(): void {
-  const compiled = _.template(window['errorTemplate']);
-  const mainElement = document.querySelector('main');
-  mainElement.innerHTML = compiled(error500Data);
-})();
+
+const errorPage = new BasePageComponent(template, errorData);
+errorPage.render();

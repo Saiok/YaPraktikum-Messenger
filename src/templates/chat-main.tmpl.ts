@@ -56,39 +56,37 @@
 </div>
 */
 
-window['chatMainTemplate'] = (function(): string {
-  return `
-  <div class="<%= classes.messageFieldWrapper %>">
-    <div class="<%= classes.messageField %>">
-      <div class="<%= classes.chatInfoWrapper %>">
-        <div class="<%= classes.avatar %>"></div>
-        <div class="<%= classes.chatInfo %>">
-          <span class="<%= classes.chatUserName %>"><%= contents.chatUserName %></span>
-          <span class="<%= classes.chatUserActivity %>"><%= contents.chatUserActivity %></span>
-        </div>
-        <img class="<%= settingsImg.class %>" src="<%= settingsImg.src %>" alt="<%= settingsImg.alt %>">
+export default `
+<div class="<%= classes.messageFieldWrapper %>">
+  <div class="<%= classes.messageField %>">
+    <div class="<%= classes.chatInfoWrapper %>">
+      <div class="<%= classes.avatar %>"></div>
+      <div class="<%= classes.chatInfo %>">
+        <span class="<%= classes.chatUserName %>"><%= contents.chatUserName %></span>
+        <span class="<%= classes.chatUserActivity %>"><%= contents.chatUserActivity %></span>
       </div>
+      <img class="<%= settingsImg.class %>" src="<%= settingsImg.src %>" alt="<%= settingsImg.alt %>">
+    </div>
+    
+    <div class="<%= classes.chatContentWrapper %>">
       
-      <div class="<%= classes.chatContentWrapper %>">
-        
-        <span class="<%= classes.chattingDay %>"><%= contents.chattingDay %></span>
-        
-        <% items.forEach(function(item) {%>
-        <div class="<%- item.classes.messageWrapper %>">
-          <div class="<%- item.classes.message %>">
-            <span><%- item.contents.message %></span>
-            <span class="<%- item.classes.messageTime %>"><%- item.contents.time %></span>
-          </div>
+      <span class="<%= classes.chattingDay %>"><%= contents.chattingDay %></span>
+      
+      <% items.forEach(function(item) {%>
+      <div class="<%- item.classes.messageWrapper %>">
+        <div class="<%- item.classes.message %>">
+          <span><%- item.contents.message %></span>
+          <span class="<%- item.classes.messageTime %>"><%- item.contents.time %></span>
         </div>
-        <% }); %>
+      </div>
+      <% }); %>
 
-      </div>
-      
-      <div class="<%= classes.actionWrapper %>">
-        <img class="<%= actionImg.class %>" src="<%= actionImg.src %>" alt="<%= actionImg.alt %>">
-        <input class="<%= actionInput.class %>" type="<%= actionInput.type %>" id="<%= actionInput.id %>" placeholder="<%= actionInput.placeholder %>">
-      </div>
+    </div>
+    
+    <div class="<%= classes.actionWrapper %>">
+      <img class="<%= actionImg.class %>" src="<%= actionImg.src %>" alt="<%= actionImg.alt %>">
+      <input class="<%= actionInput.class %>" type="<%= actionInput.type %>" id="<%= actionInput.id %>" placeholder="<%= actionInput.placeholder %>">
     </div>
   </div>
-  `;
-})();
+</div>
+`;

@@ -4,7 +4,10 @@
   "description": "Yandex Praktikum. Project of first sprint",
   "main": "index.js",
   "scripts": {
-    "compile-ts": "tsc --watch"
+    "start": "node server.js",
+    "build:static": "xcopy static build\\static /s/h/e/k/f/c && xcopy styles build\\styles /s/h/e/k/f/c",
+    "build:ts": "tsc",
+    "build": "npm run build:ts && npm run build:static"
   },
   "repository": {
     "type": "git",
