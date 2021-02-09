@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "outDir": "./build/src",
+    "allowJs": true,
+    "lib": ["es2016", "dom", "es2017"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "*.js"]
+}
